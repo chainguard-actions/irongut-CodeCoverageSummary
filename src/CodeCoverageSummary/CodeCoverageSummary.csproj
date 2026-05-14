@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <Company>Taranis Software</Company>
+    <Authors>Irongut</Authors>
+    <Description>A GitHub Action that reads Cobertura format code coverage files and outputs a text or markdown summary.</Description>
+    <Copyright>Copyright © 2021 Taranis Software</Copyright>
+    <PackageId>Taranis.CodeCoverageSummary</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/irongut/CodeCoverageSummary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/irongut/CodeCoverageSummary</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>coverage test-coverage cobertura action code-coverage coverlet github-actions</PackageTags>
+    <Version>1.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+  </ItemGroup>
+
+</Project>

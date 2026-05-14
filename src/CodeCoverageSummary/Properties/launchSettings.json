@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "CodeCoverageSummary": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../coverage.cobertura.xml --format=md --badge true --thresholds=\"85 90\" --fail true"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "commandLineArgs": "/src/coverage.cobertura.xml --format=md --badge=true"
+    }
+  }
+}
