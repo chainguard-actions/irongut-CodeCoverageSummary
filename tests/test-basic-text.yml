@@ -1,0 +1,25 @@
+name: Test basic text output
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Run Code Coverage Summary (text format)
+        id: action
+        uses: .
+        with:
+          filename: '**/tests/fixtures/coverage.xml'
+          format: text
+          output: console
+          indicators: 'true'
+          badge: 'false'
+          hide_branch_rate: 'false'
+          hide_complexity: 'false'
+          fail_below_min: 'false'
+          thresholds: '50 75'
+      - name: Assert action succeeded
+        run: |
+          echo "Action completed successfully with text format output"
+          echo "PASS"

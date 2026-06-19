@@ -1,0 +1,32 @@
+name: Test file output mode
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Run Code Coverage Summary (file output)
+        id: action
+        uses: .
+        with:
+          filename: '**/tests/fixtures/coverage.xml'
+          format: markdown
+          output: file
+          badge: 'false'
+          indicators: 'true'
+          hide_branch_rate: 'false'
+          hide_complexity: 'false'
+          fail_below_min: 'false'
+          thresholds: '50 75'
+      - name: Assert output file was created
+        run: |
+          echo "Checking for output file..."
+          if [ ! -f "$GITHUB_WORKSPACE/code-coverage-results.md" ]; then
+            echo "FAIL: expected output file 'code-coverage-results.md' not found"
+            ls -la "$GITHUB_WORKSPACE"
+            exit 1
+          fi
+          echo "Output file contents:"
+          cat "$GITHUB_WORKSPACE/code-coverage-results.md"
+          echo "PASS: output file was created"

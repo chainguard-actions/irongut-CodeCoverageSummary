@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage line-rate="0.85" branch-rate="0.75" version="1" timestamp="1609459200" lines-covered="85" lines-valid="100" branches-covered="15" branches-valid="20" complexity="10">
+  <sources>
+    <source>.</source>
+  </sources>
+  <packages>
+    <package name="MyPackage" line-rate="0.85" branch-rate="0.75" complexity="10">
+      <classes>
+        <class name="MyClass" filename="MyClass.cs" line-rate="0.85" branch-rate="0.75" complexity="10">
+          <methods>
+            <method name="MyMethod" signature="()" line-rate="1.0" branch-rate="1.0" complexity="1">
+              <lines>
+                <line number="1" hits="1"/>
+                <line number="2" hits="1"/>
+                <line number="3" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1"/>
+            <line number="2" hits="1"/>
+            <line number="3" hits="1"/>
+            <line number="4" hits="1"/>
+            <line number="5" hits="0"/>
+            <line number="6" hits="1"/>
+            <line number="7" hits="1"/>
+            <line number="8" hits="0"/>
+            <line number="9" hits="1"/>
+            <line number="10" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
