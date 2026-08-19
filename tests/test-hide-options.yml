@@ -6,20 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Run Code Coverage Summary (hide branch rate and complexity)
+      - name: Run Code Coverage Summary with hidden branch rate and complexity
         id: action
         uses: .
         with:
-          filename: '**/tests/fixtures/coverage.xml'
+          filename: tests/fixtures/coverage.xml
           format: text
           output: console
           hide_branch_rate: 'true'
           hide_complexity: 'true'
-          indicators: 'false'
-          badge: 'false'
-          fail_below_min: 'false'
-          thresholds: '50 75'
-      - name: Assert action succeeded with hidden options
+          indicators: 'true'
+      - name: Assert action completed successfully
         run: |
-          echo "Action completed successfully with branch rate and complexity hidden"
+          echo "Action completed with hide_branch_rate and hide_complexity enabled"
           echo "PASS"

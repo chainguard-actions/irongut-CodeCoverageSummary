@@ -1,0 +1,29 @@
+name: Test fail below minimum threshold
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Run Code Coverage Summary with low coverage (expect failure)
+        id: action
+        uses: .
+        with:
+          filename: tests/fixtures/coverage-low.xml
+          format: text
+          output: console
+          fail_below_min: 'true'
+          thresholds: '50 75'
+        continue-on-error: true
+      - name: Assert action failed due to low coverage
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+        run: |
+          echo "Action outcome: $OUTCOME"
+          if [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action correctly failed due to coverage below minimum threshold"
+          else
+            echo "FAIL: expected action to fail due to low coverage (30%) below threshold (50%), but outcome was: $OUTCOME"
+            exit 1
+          fi

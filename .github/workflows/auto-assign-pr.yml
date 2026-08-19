@@ -1,0 +1,26 @@
+# Assign PR to Author
+# https://github.com/samspills/assign-pr-to-author
+
+name: Auto Assign PR
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assignAuthor:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Harden Runner
+      uses: step-security/harden-runner@74b568e8591fbb3115c70f3436a0c6b0909a8504
+      with:
+        egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
+    - name: Auto Assign PR
+      uses: samspills/assign-pr-to-author@223a87a821f7e7447cfb5221bc53ceeb633341c2
+      with:
+        repo-token: '${{ secrets.GITHUB_TOKEN }}'

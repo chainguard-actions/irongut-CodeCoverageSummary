@@ -1,4 +1,4 @@
-name: Test basic text output
+name: Test badge output
 on:
   workflow_dispatch:
 jobs:
@@ -6,14 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Run Code Coverage Summary (text format)
+      - name: Run Code Coverage Summary with badge
         id: action
         uses: .
         with:
           filename: tests/fixtures/coverage.xml
-          format: text
+          badge: 'true'
+          format: markdown
           output: console
-      - name: Assert action completed successfully
+          thresholds: '50 75'
+      - name: Assert action completed successfully with badge
         run: |
-          echo "Action completed successfully"
+          echo "Action completed with badge enabled"
           echo "PASS"
