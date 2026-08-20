@@ -8,7 +8,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
-| v1.1.0 | [`v1.1.0`](https://github.com/chainguard-actions/irongut-CodeCoverageSummary/tree/v1.1.0) | — |
+| v1.1.0 | [`v1.1.0`](https://github.com/chainguard-actions/irongut-CodeCoverageSummary/tree/v1.1.0) | [`065eaf7`](https://github.com/irongut/CodeCoverageSummary/commit/065eaf7bb520f8e36979631183958be5e7934e31) |
 | v1.3.0 | [`v1.3.0`](https://github.com/chainguard-actions/irongut-CodeCoverageSummary/tree/v1.3.0) | [`51cc3a7`](https://github.com/irongut/CodeCoverageSummary/commit/51cc3a756ddcd398d447c044c02cb6aa83fdae95) |
 
 ## Privacy
