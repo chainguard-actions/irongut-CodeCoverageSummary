@@ -1,0 +1,20 @@
+name: Test Linux Runner
+
+on:
+  workflow_dispatch:
+permissions:
+  contents: read  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: CI Build
+    steps:
+    - name: Test Action
+      uses: irongut/CodeCoverageSummary@f13848964841ca2f7a63343b287493e17dc645de # master
+      with:
+        filename: '/app/sample.coverage.xml'
+        badge: true
+        format: 'md'
+        fail_below_min: true
+        thresholds: '60 80'

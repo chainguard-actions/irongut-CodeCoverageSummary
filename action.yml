@@ -34,7 +34,7 @@ inputs:
     default: '50 75'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/irongut/codecoveragesummary@sha256:68c08a769a70e7b89e34f2c7729173bdf1a8dd1bb8034842550537b45e21f595' # v1.1.0
+  image: 'docker://ghcr.io/irongut/codecoveragesummary:v1.1.0@sha256:68c08a769a70e7b89e34f2c7729173bdf1a8dd1bb8034842550537b45e21f595'
   args:
     - ${{ inputs.filename }}
     - '--badge'

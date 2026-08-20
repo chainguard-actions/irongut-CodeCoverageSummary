@@ -1,0 +1,19 @@
+# Assign PR to Author
+# https://github.com/samspills/assign-pr-to-author
+
+name: Auto Assign PR
+on: [pull_request]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  assignAuthor:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Auto Assign PR
+      uses: samspills/assign-pr-to-author@223a87a821f7e7447cfb5221bc53ceeb633341c2 # v1.0
+      if: github.event_name == 'pull_request' && github.event.action == 'opened'
+      with:
+        repo-token: '${{ secrets.GITHUB_TOKEN }}'
